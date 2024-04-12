@@ -5,7 +5,9 @@
     "vitest.config.*",
     "cypress.config.*",
     "nightwatch.conf.*",
-    "playwright.config.*"
+    "playwright.config.*",
+    "build/**/*.ts",
+    "build/**/*.d.ts"
   ],
   "compilerOptions": {
     "composite": true,
@@ -14,6 +16,6 @@
 
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "types": ["node"]
+    "types": ["node", "vite/client"]
   }
 }
