@@ -1,7 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# npm test
-
-# 对应的script脚本为"lint": "eslint \"{src,mock,build}/**/*.{vue,ts,tsx}\" --fix"
-pnpm lint
+npx lint-staged
