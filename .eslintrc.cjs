@@ -12,5 +12,8 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
+  },
+  rules: {
+    'vue/multi-word-component-names': 'off' // 要求组件名称始终为 “-” 链接的单词
   }
 };

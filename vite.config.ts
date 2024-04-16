@@ -1,17 +1,17 @@
-import { ConfigEnv, defineConfig, loadEnv } from 'vite'
-import { setupVitePlugins } from './build'
-import pkg from './package.json'
-import { resolve } from 'path'
-import dayjs from 'dayjs'
+import { ConfigEnv, defineConfig, loadEnv } from 'vite';
+import { setupVitePlugins } from './build';
+import pkg from './package.json';
+import { resolve } from 'path';
+import dayjs from 'dayjs';
 
-const { dependencies, devDependencies, name, version } = pkg
+const { dependencies, devDependencies, name, version } = pkg;
 const __APP_INFO__ = {
   pkg: { dependencies, devDependencies, name, version },
   lastBuildTime: dayjs(new Date()).format('YYYY-MM-DD HH:mm:ss')
-}
+};
 
 export default defineConfig((configEnv: ConfigEnv) => {
-  const viteEnv = loadEnv(configEnv.mode, process.cwd()) as ImportMetaEnv
+  const viteEnv = loadEnv(configEnv.mode, process.cwd()) as ImportMetaEnv;
 
   return {
     base: viteEnv.VITE_BASE_URL,
@@ -25,7 +25,6 @@ export default defineConfig((configEnv: ConfigEnv) => {
       host: '0.0.0.0',
       port: 8080,
       open: true,
-      https: false,
       proxy: {}
     },
     plugins: setupVitePlugins(viteEnv),
@@ -41,5 +40,5 @@ export default defineConfig((configEnv: ConfigEnv) => {
       }
     },
     define: { __APP_INFO__: JSON.stringify(__APP_INFO__) }
-  }
-})
+  };
+});
